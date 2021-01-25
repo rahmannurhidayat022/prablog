@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/sb-admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
 <body>
     <div id="app">
@@ -79,5 +81,22 @@
             @yield('content')
         </main>
     </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="{{ asset('assets/sb-admin/vendor/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/sb-admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    
+        <!-- Core plugin JavaScript-->
+        <script src="{{ asset('assets/sb-admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    
+        <!-- Custom scripts for all pages-->
+        <script src="{{ asset('assets/sb-admin/js/sb-admin-2.min.js') }}"></script>
+    
+        <!-- Page level plugins -->
+        <script src="{{ asset('assets/sb-admin/vendor/chart.js/Chart.min.js') }}"></script>
+    
+        <!-- Page level custom scripts -->
+        <script src="{{ asset('assets/sb-admin/js/demo/chart-area-demo.js') }}"></script>
+        <script src="{{ asset('assets/sb-admin/js/demo/chart-pie-demo.js') }}"></script>
 </body>
 </html>
