@@ -26,13 +26,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $no = 1;?>
+                            @foreach ($articles as $item)
                             <tr>
-                            <th scope="row">1</th>
-                            <td>
-                                <a href="" class="btn btn-small btn-warning"><i class="fas fa-edit"></i></a>
-                                <a href="" class="btn btn-small btn-danger"><i class="far fa-trash-alt"></i></a>
-                            </td>
+                                <th scope="row">{{ $no++ }}</th>
+                                <td>{{ $item->nama }}</td>
+                                <td>{{ $item->gambar }}</td>
+                                <td>{{ $item->kota }}</td>
+                                <td>{{ $item->deskripsi }}</td>
+                                <td>{{ $item->kategori }}</td>
+                                <td>
+                                    <a href="" class="btn btn-small btn-warning"><i class="fas fa-edit"></i></a>
+                                    <a href="" class="btn btn-small btn-danger"><i class="far fa-trash-alt"></i></a>
+                                </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -52,7 +60,7 @@
             </button>
             </div>
             <div class="modal-body">
-                <form class="" action="" method="POST" enctype="multiform/form-data">
+                <form class="" action="{{ route('add') }}" method="POST" enctype="multiform/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama : </label>

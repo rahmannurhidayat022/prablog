@@ -10,12 +10,11 @@ class ArtikelController extends Controller
     public function index() {
         $rows = Artikel::all();
 
-        return view('home', compact('rows'));
+        return view('home', compact('articles'));
     }
 
     public function store(Request $request) {
-        $file = $request->file('gambar');
-
+        $file = Artikel::file('gambar');
         // Mendapatkan Nama File
         $nama_file = $file->getClientOriginalName();
 
