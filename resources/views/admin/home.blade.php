@@ -41,7 +41,7 @@
                                 </td>
                                 <td>{{ $item->kategori }}</td>
                                 <td>
-                                    <a href="" class="btn btn-block btn-warning"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ url('/edit/'.$item->id) }}" class="btn btn-block btn-warning"><i class="fas fa-edit"></i></a>
                                     <a href="" class="btn btn-block btn-danger"><i class="far fa-trash-alt"></i></a>
                                     <a href="{{ url('/detail/'.$item->id) }}" class="btn btn-block btn-primary">Detail</a>
                                 </td>
@@ -60,12 +60,12 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- add data -->
 <div class="modal fade" id="tambah_data" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Tambah Cadar Budaya</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">Tambah Artikel</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -75,7 +75,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama : </label>
-                        <input required name="nama" name="nama" type="text" placeholder="Nama Tempat" class="form-control" id="nama">
+                        <input required name="nama" type="text" placeholder="Nama Tempat" class="form-control" id="nama">
                     </div>
                     <div class="form-group">
                         <label for="gambar">Gambar : </label>
