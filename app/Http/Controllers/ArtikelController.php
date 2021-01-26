@@ -8,13 +8,13 @@ use App\Models\Artikel;
 class ArtikelController extends Controller
 {
     public function index() {
-        $rows = Artikel::all();
+        $articles = Artikel::all();
 
-        return view('home', compact('articles'));
+        return view('admin.home', compact('articles'));
     }
 
     public function store(Request $request) {
-        $file = Artikel::file('gambar');
+        $file = $request->file('gambar');
         // Mendapatkan Nama File
         $nama_file = $file->getClientOriginalName();
 
