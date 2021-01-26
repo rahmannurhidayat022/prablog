@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/sb-admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
 <body>
     <div id="app">
@@ -98,5 +99,22 @@
         <!-- Page level custom scripts -->
         <script src="{{ asset('assets/sb-admin/js/demo/chart-area-demo.js') }}"></script>
         <script src="{{ asset('assets/sb-admin/js/demo/chart-pie-demo.js') }}"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+        <script>
+            //message with toastr
+            @if(session()-> has('success'))
+            
+                toastr.success('{{ session('success') }}', 'BERHASIL!'); 
+    
+            @elseif(session()-> has('error'))
+    
+                toastr.error('{{ session('error') }}', 'GAGAL!'); 
+                
+            @endif
+
+            // ckeditor
+            CKEDITOR.replace('deskripsi');
+        </script>
 </body>
 </html>

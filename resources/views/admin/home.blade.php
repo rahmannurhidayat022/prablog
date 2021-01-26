@@ -34,12 +34,16 @@
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->gambar }}</td>
                                 <td>{{ $item->kota }}</td>
-                                <td>{{ $item->deskripsi }}</td>
+                                <td>
+                                    <p style="max-height: 120px; overflow-y: hidden;">
+                                        {{ $item->deskripsi }}
+                                    </p>
+                                </td>
                                 <td>{{ $item->kategori }}</td>
                                 <td>
-                                    <a href="" class="btn btn-small btn-warning"><i class="fas fa-edit"></i></a>
-                                    <a href="" class="btn btn-small btn-danger"><i class="far fa-trash-alt"></i></a>
-                                    <a href="{{ url('/detail/'.$item->id) }}" class="btn btn-small btn-primary">Detail</a>
+                                    <a href="" class="btn btn-block btn-warning"><i class="fas fa-edit"></i></a>
+                                    <a href="" class="btn btn-block btn-danger"><i class="far fa-trash-alt"></i></a>
+                                    <a href="{{ url('/detail/'.$item->id) }}" class="btn btn-block btn-primary">Detail</a>
                                 </td>
                             </tr>
                             @endforeach

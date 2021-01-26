@@ -29,6 +29,11 @@ class ArtikelController extends Controller
             'kategori' => $request -> kategori,
         ]);
 
-        return redirect()->back();
+        if($dataBaru) {
+            return redirect()->route('home')->with('success', 'Artikel baru berhasil ditambahkan');
+        } else {
+            return redirect()->route('home')->with('error', 'Artikel baru gagal ditambahkan....coba lagi!');
+        }
+
     }
 }
