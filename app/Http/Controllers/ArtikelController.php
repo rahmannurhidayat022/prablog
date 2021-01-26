@@ -15,7 +15,11 @@ class ArtikelController extends Controller
 
     public function store(Request $request) {
         $request->validate([
+            'nama' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'kota' => 'required',
+            'deskripsi' => 'required',
+            'kategori' => 'required',
         ]);
 
         $hasName = $request->file('gambar')->hashName();
