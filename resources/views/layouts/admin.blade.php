@@ -100,7 +100,6 @@
         <script src="{{ asset('assets/sb-admin/js/demo/chart-area-demo.js') }}"></script>
         <script src="{{ asset('assets/sb-admin/js/demo/chart-pie-demo.js') }}"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-        <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
         <script>
             //message with toastr
             @if(session()-> has('success'))
@@ -112,9 +111,6 @@
                 toastr.error('{{ session('error') }}', 'GAGAL!'); 
                 
             @endif
-
-            // ckeditor
-            CKEDITOR.replace('deskripsi');
         </script>
 </body>
 </html>

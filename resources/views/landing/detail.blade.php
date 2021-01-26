@@ -6,7 +6,7 @@
         <div class="card bg-light my-3 p-0">
             <div class="row">
                 <div class="col-lg-6">
-                    <img src="{{ asset('assets/uploads').'/'.$item->gambar }}" class="img-fluid" alt="{{ $item->gambar }}">
+                    <img src="{{ asset('assets/uploads').'/'.$item->gambar }}" class="" alt="{{ $item->gambar }}">
                 </div>
                 <div class="col-lg-6 p-3">
                     <div class="card-title">
