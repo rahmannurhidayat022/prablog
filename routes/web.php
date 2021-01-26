@@ -21,5 +21,6 @@ Route::get('/home', [App\Http\Controllers\ArtikelController::class, 'index'])->n
 Route::post('/add', [App\Http\Controllers\ArtikelController::class, 'store'])->name('add');
 Route::post('/update', [App\Http\Controllers\ArtikelController::class, 'update'])->name('update');
 Route::get('/edit/{id}', [App\Http\Controllers\ArtikelController::class, 'updatepage']);
+Route::get('/delete/{id}', [App\Http\Controllers\ArtikelController::class, 'destroy']);
 Route::get('/detail/{id}', [App\Http\Controllers\LandingController::class, 'detail']);
 

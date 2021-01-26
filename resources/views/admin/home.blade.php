@@ -42,7 +42,7 @@
                                 <td>{{ $item->kategori }}</td>
                                 <td>
                                     <a href="{{ url('/edit/'.$item->id) }}" class="btn btn-block btn-warning"><i class="fas fa-edit"></i></a>
-                                    <a href="" class="btn btn-block btn-danger"><i class="far fa-trash-alt"></i></a>
+                                    <a href="{{ url('/delete/'.$item->id) }}" class="btn btn-block btn-danger"><i class="far fa-trash-alt"></i></a>
                                     <a href="{{ url('/detail/'.$item->id) }}" class="btn btn-block btn-primary">Detail</a>
                                 </td>
                             </tr>

@@ -72,7 +72,7 @@ class ArtikelController extends Controller
             ]);
     
         } else {
-            $pathOldFile = public_path('assets/uploads'.$request->gambar);
+            $pathOldFile = public_path('assets/uploads'.'/'.$request->gambar);
             //hapus old image
             if(file_exists($pathOldFile)) {
                 @unlink($pathOldFile);
@@ -103,8 +103,7 @@ class ArtikelController extends Controller
 
     public function destroy($id)
     {
-        $article = Artikel::all()->where('id', $id);
-        $article->delete();
+        $article = Artikel::destroy($id);
 
         if($article){
             //redirect dengan pesan sukses

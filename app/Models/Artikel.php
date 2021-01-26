@@ -19,4 +19,10 @@ class Artikel extends Model
         'deskripsi',
         'kategori',
     ];
+
+    public function deleteData($id) {
+        DB::table('artikel')
+            ->where('id', $id)
+            ->delete();
+    }
 }
