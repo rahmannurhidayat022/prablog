@@ -11,18 +11,19 @@
             </div>
         </div>
         <div class="row">
+            @if ($articles != '')
             <div class="col">
                 <div class="table-responsive">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Nama Tempat</th>
-                            <th scope="col">Gambar</th>
-                            <th scope="col">Kota</th>
-                            <th scope="col">Deskripsi</th>
-                            <th scope="col">Kategori</th>
-                            <th scope="col">Aksi</th>
+                                <th scope="col">No</th>
+                                <th scope="col">Nama Tempat</th>
+                                <th scope="col">Gambar</th>
+                                <th scope="col">Kota</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Kategori</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,7 +46,12 @@
                         </tbody>
                     </table>
                 </div>
+            </div>    
+            @else
+            <div class="alert alert-info" role="alert">
+                A simple info alert—check it out!
             </div>
+            @endif
         </div>
     </div>
 </div>
@@ -61,7 +67,7 @@
             </button>
             </div>
             <div class="modal-body">
-                <form class="" action="{{ route('add') }}" method="POST" enctype="multiform/form-data">
+                <form action="{{ route('add') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama : </label>

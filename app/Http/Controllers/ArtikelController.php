@@ -14,24 +14,17 @@ class ArtikelController extends Controller
     }
 
     public function store(Request $request) {
-        $file = $request->file('gambar');
-        // Mendapatkan Nama File
-        $nama_file = $file->getClientOriginalName();
+        $request->validate([
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
 
-        // Mendapatkan Extension File
-        $extension = $file->getClientOriginalExtension();
-
-        // Mendapatkan Ukuran File
-        $ukuran_file = $file->getSize();
-
-        // Proses Upload File
-        $destinationPath = public_path() . 'uploads/';
-        $file->move($destinationPath,$file->getClientOriginalName());
+        $hasName = $request->file('gambar')->hashName();
+        $path = $request->file('gambar')->move(public_path('assets/uploads'), $hasName);
 
         $dataBaru = Artikel::create([
             'nama' => $request -> nama,
-            'gambar' => $nama_file,
-            'kota' => $request -> deskripsi,
+            'gambar' => $hasName,
+            'kota' => $request -> kota,
             'deskripsi' => $request -> deskripsi,
             'kategori' => $request -> kategori,
         ]);
