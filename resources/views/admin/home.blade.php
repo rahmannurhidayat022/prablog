@@ -11,7 +11,17 @@
             </div>
         </div>
         <div class="row">
-            @if ($articles != '')
+            <div class="col">
+                <p>Halaman : {{ $articles->currentPage() }}</p>
+            </div>
+            <div class="col">
+                <p>Jumlah Data : {{ $articles->total() }}</p>
+            </div>
+            <div class="col">
+                Data Perhalaman : {{ $articles->perPage() }}
+            </div>
+        </div>
+        <div class="row">
             <div class="col">
                 <div class="table-responsive">
                     <table class="table">
@@ -51,11 +61,9 @@
                     </table>
                 </div>
             </div>    
-            @else
-            <div class="alert alert-info" role="alert">
-                A simple info alert—check it out!
-            </div>
-            @endif
+        </div>
+        <div class="row">
+            {{ $articles->links() }}
         </div>
     </div>
 </div>

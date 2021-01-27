@@ -14,10 +14,20 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <form action="" method="POST">
-                                <div class="row">
-                                    <div class="col-lg-2">
-                                        <div class="d-flex">
+                            <div class="col">
+                                <p>Halaman : {{ $article->currentPage() }}</p>
+                            </div>
+                            <div class="col">
+                                <p>Jumlah Data : {{ $article->total() }}</p>
+                            </div>
+                            <div class="col">
+                                Data Perhalaman : {{ $article->perPage() }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <form action="{{ url('/artikel/filter_kategori') }}" method="GET">
+                                    <div class="d-flex">
                                             <select name="filter_kategori" class="form-control">
                                                 <option>Filter Kategori ....</option>
                                                 <option value="benda">Benda</option>
@@ -27,15 +37,18 @@
                                                 <option value="kawasan">Kawasan</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6">
+                                    </form>
+                                </div>
+                                <div class="col-lg-8">
+                                    <form action="{{ url('/artikel/cari') }}" method="GET">
+                                        @csrf
                                         <div class="d-flex">
-                                            <input class="form-control" type="search" placeholder="Cari Cadar Budaya" aria-label="Search">
+                                            <input name="cari" class="form-control" type="search" placeholder="Cari Cadar Budaya" aria-label="Search">
                                             <button class="btn btn-outline-success" type="submit">Cari</button>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="container">
@@ -52,7 +65,7 @@
                                         </thead>
                                         <tbody>
                                             <?php $no = 1;?>
-                                            @foreach ($articles as $item)
+                                            @foreach ($article as $item)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $item->nama }}</td>
@@ -69,6 +82,9 @@
                                     </table>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            {{ $article->links() }}
                         </div>
                     </div>
                 </div>

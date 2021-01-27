@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Artikel;
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ArtikelController extends Controller
 {
     public function index() {
-        $articles = Artikel::all();
+        $articles = DB::table('artikel')->paginate(10);
 
         return view('admin.home', compact('articles'));
     }

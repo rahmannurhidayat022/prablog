@@ -23,4 +23,5 @@ Route::post('/update', [App\Http\Controllers\ArtikelController::class, 'update']
 Route::get('/edit/{id}', [App\Http\Controllers\ArtikelController::class, 'updatepage']);
 Route::get('/delete/{id}', [App\Http\Controllers\ArtikelController::class, 'destroy']);
 Route::get('/detail/{id}', [App\Http\Controllers\LandingController::class, 'detail']);
+Route::get('/artikel/cari', [App\Http\Controllers\LandingController::class, 'cari']);
 
