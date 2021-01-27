@@ -44,7 +44,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="https://github.com/rahmannurhidayat022/" class="nav-link">
+                            <a href="https://github.com/rahmannurhidayat022/prablog/" class="nav-link">
                                 <i class="fab fa-2x fa-github"></i>
                             </a>
                         </li>
