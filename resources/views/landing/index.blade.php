@@ -14,41 +14,23 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-lg-2">
                                 <p>Halaman : {{ $article->currentPage() }}</p>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2">
                                 <p>Jumlah Data : {{ $article->total() }}</p>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2">
                                 Data Perhalaman : {{ $article->perPage() }}
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <form action="{{ url('/artikel/filter_kategori') }}" method="GET">
+                            <div class="col">
+                                <form action="{{ url('/artikel/cari') }}" method="GET">
                                     @csrf
                                     <div class="d-flex">
-                                            <select name="filter_kategori" class="form-control">
-                                                <option>Filter Kategori ....</option>
-                                                <option value="benda">Benda</option>
-                                                <option value="bangunan">Bangunan</option>
-                                                <option value="struktur">Struktur</option>
-                                                <option value="situs">Situs</option>
-                                                <option value="kawasan">Kawasan</option>
-                                            </select>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-lg-8">
-                                    <form action="{{ url('/artikel/cari') }}" method="GET">
-                                        @csrf
-                                        <div class="d-flex">
-                                            <input name="cari" class="form-control" type="search" placeholder="Cari Cadar Budaya" aria-label="Search">
-                                            <button class="btn btn-outline-success" type="submit">Cari</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                        <input name="cari" class="form-control" type="search" placeholder="Cari Data Cadar Budaya" aria-label="Search">
+                                        <button class="btn btn-outline-success" type="submit">Cari</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="row">
