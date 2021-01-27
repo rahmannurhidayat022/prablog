@@ -28,6 +28,7 @@ class LandingController extends Controller
         $article = DB::table('artikel')
         ->where('nama','like',"%".$cari."%")
         ->orWhere('kota','like',"%".$cari."%")
+        ->orWhere('kategori','like',"%".$cari."%")
         ->paginate(10);
 
         return view('landing.index', compact('article'));
