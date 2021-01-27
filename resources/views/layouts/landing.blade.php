@@ -42,20 +42,33 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
-                        @if (Route::has('login'))
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="https://github.com/rahmannurhidayat022/" class="nav-link">
+                                <i class="fab fa-2x fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://instagram.com/rahman_nhidayat/" class="nav-link">
+                                <i class="fab fa-2x fa-instagram-square"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    @if (Route::has('login'))
+                    <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
                                 @auth
-                                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
+                                <a class="nav-link" href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
                             </li>
                             <li class="nav-item">
                                 @else
-                                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+                                <a class="nav-link" href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
                             </li>
                             <li class="nav-item">
-                                @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                                @endif
+                                    @if (Route::has('register'))
+                                    <a class="nav-link" href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                                    @endif
                                 @endauth
                             </li>
                         @endif
