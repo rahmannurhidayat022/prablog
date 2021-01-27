@@ -27,6 +27,7 @@
                         <div class="row">
                             <div class="col-lg-2">
                                 <form action="{{ url('/artikel/filter_kategori') }}" method="GET">
+                                    @csrf
                                     <div class="d-flex">
                                             <select name="filter_kategori" class="form-control">
                                                 <option>Filter Kategori ....</option>

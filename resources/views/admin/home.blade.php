@@ -10,15 +10,24 @@
                 </button>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
+        <div class="row my-2">
+            <div class="col-lg-2">
                 <p>Halaman : {{ $articles->currentPage() }}</p>
             </div>
-            <div class="col">
+            <div class="col-lg-2">
                 <p>Jumlah Data : {{ $articles->total() }}</p>
             </div>
-            <div class="col">
+            <div class="col-lg-2">
                 Data Perhalaman : {{ $articles->perPage() }}
+            </div>
+            <div class="col">
+                <form action="{{ url('/home/artikel/cari') }}" method="GET">
+                    @csrf
+                    <div class="d-flex">
+                        <input name="cari" class="form-control" type="search" placeholder="Cari Data Cadar Budaya" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Cari</button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="row">

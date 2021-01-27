@@ -22,6 +22,8 @@ Route::post('/add', [App\Http\Controllers\ArtikelController::class, 'store'])->n
 Route::post('/update', [App\Http\Controllers\ArtikelController::class, 'update'])->name('update');
 Route::get('/edit/{id}', [App\Http\Controllers\ArtikelController::class, 'updatepage']);
 Route::get('/delete/{id}', [App\Http\Controllers\ArtikelController::class, 'destroy']);
+Route::get('/home/artikel/cari', [App\Http\Controllers\ArtikelController::class, 'cari']);
+
 Route::get('/detail/{id}', [App\Http\Controllers\LandingController::class, 'detail']);
 Route::get('/artikel/cari', [App\Http\Controllers\LandingController::class, 'cari']);
 

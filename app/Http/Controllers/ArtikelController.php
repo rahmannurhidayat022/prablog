@@ -100,8 +100,7 @@ class ArtikelController extends Controller
         }
     }
 
-    public function destroy($id)
-    {
+    public function destroy($id) {
         $article = Artikel::destroy($id);
 
         if($article){
@@ -111,6 +110,20 @@ class ArtikelController extends Controller
             //redirect dengan pesan error
             return redirect()->route('home')->with(['error' => 'Data Gagal Dihapus!']);
         }
+    }
+
+    public function cari(Request $request) {
+        // menangkap data pencarian
+		$cari = $request->cari;
+
+        // mengambil data dari table pegawai sesuai pencarian data
+        $articles = DB::table('artikel')
+        ->where('nama','like',"%".$cari."%")
+        ->orWhere('kota','like',"%".$cari."%")
+        ->orWhere('kategori','like',"%".$cari."%")
+        ->paginate(10);
+
+        return view('admin.home', compact('articles'));
     }
 
 }
